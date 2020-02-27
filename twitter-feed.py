@@ -18,7 +18,7 @@ print(f"WEBSOCKET_SERVER_PORT = {websocket_port}")
 
 async def time(websocket, path):
     consumer = KafkaConsumer(bootstrap_servers=kafka_servers,value_deserializer=lambda m: json.loads(m.decode('utf-8')))
-    consumer.subscribe([kafka_listen_topic])
+    consumer.subscribe(kafka_listen_topic)
     for message in consumer:
         record = json.loads(message.value)
         if "raw_data" in record :
