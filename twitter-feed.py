@@ -8,7 +8,7 @@ import os
 
 
 kafka_servers = os.environ.get("KAFKA_BOOTSTRAP_SERVERS","localhost:9092").split(",")
-kafka_listen_topic = os.environ.get('KAFKA_LISTEN_TOPIC', 't_topic').split(",")
+kafka_listen_topic = os.environ.get('KAFKA_LISTEN_TOPIC', 'lews-twitter').split(",")
 websocket_port = os.environ.get('WEBSOCKET_SERVER_PORT', 5678)
 print("Environment variables:")
 print(f"KAFKA_BOOTSTRAP_SERVERS = {kafka_servers}")
